@@ -22,7 +22,7 @@ jobs:
          python-version: '3.12'
          
       - name: Run the check
-        run: python check.py       
+        run: python labs/capstone/check.py       
         
         
         
