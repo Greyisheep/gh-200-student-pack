@@ -16,8 +16,8 @@ jobs:
     runs-on: ${{matrix.os}}
 # Steps. this lists the steps  and what it uses
     steps:
-      - uses: actions/checkout@<SHA>
-      - uses: actions/setup-python@<SHA>
+      - uses: actions/checkout@f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a
+      - uses: actions/setup-python@v7
         with: 
          python-version: '3.12'
          
