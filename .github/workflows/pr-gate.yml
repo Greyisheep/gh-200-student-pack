@@ -1,0 +1,27 @@
+name: PR gate
+
+on:                                   # 1: on a PR to main, and by hand
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false                # 3: do not cancel the other leg
+      matrix:                         # 2: both operating systems
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      # 4: pinned to a commit SHA, version in the comment
+      - uses: actions/checkout@v7.0.1
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+
+      - name: Run the check
+        run: python labs/capstone/check.py
+
+# 5 is not in this file. Settings, Rules, require the check named
+# "check (ubuntu-latest)" and "check (windows-latest)" on main.
