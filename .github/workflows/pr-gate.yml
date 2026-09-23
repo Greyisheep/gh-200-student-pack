@@ -3,7 +3,7 @@
 name: PR gate 
 on: 
   pull_request:
-    branches: pr-gate
+    branches: main
   workflow_dispatch:
   # this answers where  ubuntu or windows. notice the use of matrix to define certain jobs
   # and calling it as an expression
