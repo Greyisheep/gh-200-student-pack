@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Run the check
-        run: python capstone/check.py
+        run: python labs/capstone/check.py
         
   # build-linux:
   #   runs-on: ubuntu-latest
